@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title> simple carousel </title>
+        <style> 
+            body {
+                background-color: pink;
+            }
+            h1{
+                text-align: center;
+                text-decoration: underline;
+                text-transform: capitalize;
+            }
+            .carousel-container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 300px;
+            }
+            .myslides{
+                display: none;
+                max-width: 100%;
+                max-height: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="carousel-container">
+            <img class="myslides" src="boat.jpg" alt="slide 1">
+            <img class="myslides" src="flower.jpg" alt="slide 2">
+            <img class="myslides" src="Cat03.jpg" alt="slide 3">
+        </div>
+
+        <script>
+            var index = 0;
+            function carousel(){
+                var i;
+                var x = document.getElementsByClassName("myslides");
+
+                for(i = 0; i < x.length; i++){
+                    x[i].style.display = "none";
+                }
+
+                index ++;
+                if(index > x.length){
+                    index = 1;
+                }
+
+                x[index-1].style.display = "block";
+                setTimeout(carousel, 2000);
+            }
+            carousel();
+        </script>
+    </body>
+</html>
